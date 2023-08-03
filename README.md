@@ -25,15 +25,15 @@ Algumas das principais motivações para a criação da linguagem Go incluem:
 
 Os tipos de dados são fundamentais na programação, pois determinam o tipo de informação que uma variável pode armazenar.  Vamos abordar alguns dos principais tipos de dados em Go:
 
--   **Inteiros**: Em Go, os inteiros podem ser assinados (podem ser positivos ou negativos) ou não assinados (apenas positivos). Os principais tipos de inteiros em Go são: int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64. A diferença entre eles é o número de bits que cada tipo ocupa na memória. Por exemplo, o tipo int geralmente ocupa 32 bits em sistemas de 32 bits e 64 bits em sistemas de 64 bits.
+-   **Inteiros**:   Em Go, os inteiros podem ser assinados (podem ser positivos ou negativos) ou não assinados (apenas positivos). Os principais tipos de inteiros em Go são: int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64. A diferença entre eles é o número de bits que cada tipo ocupa na memória. Por exemplo, o tipo int geralmente ocupa 32 bits em sistemas de 32 bits e 64 bits em sistemas de 64 bits.
 
-    **Ponto Flutuante**:Números de ponto flutuante são usados para representar números com partes fracionárias. Em Go, temos dois tipos principais de ponto flutuante: float32 e float64. O float32 ocupa 32 bits e o float64 ocupa 64 bits, sendo este último mais preciso e geralmente utilizado por padrão.
+    **Ponto Flutuante**:   Números de ponto flutuante são usados para representar números com partes fracionárias. Em Go, temos dois tipos principais de ponto flutuante: float32 e float64. O float32 ocupa 32 bits e o float64 ocupa 64 bits, sendo este último mais preciso e geralmente utilizado por padrão.
 
-    **String**: O tipo string em Go representa uma sequência de caracteres. As strings são imutáveis em Go, ou seja, uma vez criadas, não podem ser alteradas. Para manipulá-las, você cria novas strings com as modificações desejadas.
+    **String**:   Representa uma sequência de caracteres. As strings são imutáveis em Go, ou seja, uma vez criadas, não podem ser alteradas. Para manipulá-las, você cria novas strings com as modificações desejadas.
 
-    **Booleano**:   O tipo bool em Go representa valores booleanos, que podem ser true ou false.   São frequentemente usados em expressões condicionais para controlar o fluxo de execução do programa.
+    **Booleano**:   Representa valores booleanos, que podem ser true ou false.   São frequentemente usados em expressões condicionais para controlar o fluxo de execução do programa.
 
-    **Rune**:   O tipo rune representa um valor numérico que representa um ponto de código Unicode. Geralmente é usado para representar caracteres Unicode individuais, onde rune é um alias para int32.
+    **Rune**:   Representa um valor numérico que representa um ponto de código Unicode. Geralmente é usado para representar caracteres Unicode individuais, onde rune é um alias para int32.
 
 Agora que conhecemos os tipos, uma pergunta que você pode estar se fazendo é... Como eu armazeno um valor em uma variável? Bem, em Go existe algumas formas de se atribuir valor à uma variável, antes de entrarmos nos detalhes de implementação, vamos entender oque significa instanciar uma variável!
 
