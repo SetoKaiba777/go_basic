@@ -135,14 +135,14 @@ A sintaxe para declarar uma função em Go é a seguinte:
         return valorDeRetorno
     }
 
-é improtante ressaltar que em Go, podemos ter mais de um retorno em uma única função. Go permite funções de multiplo retorno, vamos a um exemplo de implementação e chamada de função
+é importante ressaltar que em Go, podemos ter mais de um retorno em uma única função. Go permite funções de multiplo retorno, vamos a um exemplo de implementação e chamada de função
 
     func saudacao(nome string) {
         fmt.Println("Olá, " + nome + "!")
     }
     saudacao("Caio") // executa o código  fmt.Println("Olá, " + "Caio" + "!")
 
-é importante ressaltar que Go também possui suporte para e funções com um número variável de argumentos. Isso é feito usando três pontos (...) após o tipo do último parâmetro. 
+além disso, a linguagem também possui suporte para funções com um número variável de argumentos. Isso é feito usando três pontos (...) após o tipo do último parâmetro. 
 Exemplo:
 
     func somaVariadica(nums ...int) int {
