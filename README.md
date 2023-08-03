@@ -95,31 +95,34 @@ As estruturas condicionais são Switch-Case e If e suas sintaxes são bastante s
 
 ## Arrays e Slices
 
-Em Go, temos estruturas de dados usadas para armazenar coleções de elementos do mesmo tipo e são elas as Arrays e Slices. No entanto, eles têm algumas diferenças
-importantes entre si em termos de tamanho, flexibilidade e comportamento. Vamos entender cada um deles:
+Em Go, temos estruturas de dados usadas para armazenar coleções de elementos do mesmo tipo e são elas as Arrays e Slices. No entanto, eles têm algumas diferenças importantes entre si em termos de tamanho, flexibilidade e comportamento. Vamos entender cada um deles:
 
--   **Array**:  Um array em Go é uma coleção fixa de elementos com tamanho definido no momento da sua declaração. Após criado, o tamanho do array não pode ser alterado.
+**Array**:  Um array em Go é uma coleção fixa de elementos com tamanho definido no momento da sua declaração. Após criado, o tamanho do array não pode ser alterado.
 A declaração de um array em Go segue a seguinte sintaxe:
 
-        var nomeDoArray [tamanho]tipo
-    -  Os índices de um array em Go vão de 0 a tamanho-1. Para acessar ou atribuir um valor a um elemento do array, você utiliza a notação de colchetes [índice]. Por Exemplo:
+    var nomeDoArray [tamanho]tipo
+
+- Os índices de um array em Go vão de 0 a tamanho-1. Para acessar ou atribuir um valor a um elemento do array, você utiliza a notação de colchetes [índice]. Por Exemplo:
+
 
         var numeros [5]int // Cria um array de inteiros com tamanho 5
         numeros[0] = 10    // Atribui o valor 10 ao primeiro elemento do array (índice 0)
         fmt.Println(numeros[0]) // Imprime o valor 10
 
 
--   **Slice**: Um slice em Go é uma estrutura dinâmica que se comporta como uma "fatia" de um array subjacente. Diferente de um array, o tamanho de um slice pode mudar dinamicamente. A declaração de um slice em Go segue a seguinte sintaxe:
+**Slice**: Um slice em Go é uma estrutura dinâmica que se comporta como uma "fatia" de um array subjacente. Diferente de um array, o tamanho de um slice pode mudar dinamicamente. A declaração de um slice em Go segue a seguinte sintaxe:
 
         var nomeDoSlice []tipo
 
-    -   eles não possuem tamanho definido na declaração e podem ser criados a partir de um array existente ou usando a função make.
-    -   Sua composição é feita de um ponteiro para o array subjacente, o tamanho do slice e a capacidade do array subjacente (o número de elementos desde o início do  slice até o final do array). Por ser uma "fatia" de um array, as modificações em um slice afetam o array original, e vice-versa.
-    
+-   eles não possuem tamanho definido na declaração e podem ser criados a partir de um array existente ou usando a função make.
+
+        // Criando um slice a partir de um array existente
         arr := [5]int{1, 2, 3, 4, 5}
         slice := arr[1:4] // slice contém [2, 3, 4]
         // Criando um slice usando a função make
         slice := make([]int, 3) // Cria um slice de inteiros com tamanho 3 e valores iniciais 0
+    
+-   Sua composição é feita de um ponteiro para o array subjacente, o tamanho do slice e a capacidade do array subjacente (o número de elementos desde o início do  slice até o final do array). Por ser uma "fatia" de um array, as modificações em um slice afetam o array original, e vice-versa.
 
 ## Funções
 
