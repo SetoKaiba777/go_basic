@@ -104,7 +104,6 @@ A declaração de um array em Go segue a seguinte sintaxe:
         var nomeDoArray [tamanho]tipo
     -  Os índices de um array em Go vão de 0 a tamanho-1. Para acessar ou atribuir um valor a um elemento do array, você utiliza a notação de colchetes [índice]. Por Exemplo:
 
-
         var numeros [5]int // Cria um array de inteiros com tamanho 5
         numeros[0] = 10    // Atribui o valor 10 ao primeiro elemento do array (índice 0)
         fmt.Println(numeros[0]) // Imprime o valor 10
