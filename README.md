@@ -116,9 +116,11 @@ A declaração de um array em Go segue a seguinte sintaxe:
     -   eles não possuem tamanho definido na declaração e podem ser criados a partir de um array existente ou usando a função make.
     -   Sua composição é feita de um ponteiro para o array subjacente, o tamanho do slice e a capacidade do array subjacente (o número de elementos desde o início do  slice até o final do array). Por ser uma "fatia" de um array, as modificações em um slice afetam o array original, e vice-versa.
     
+        arr := [5]int{1, 2, 3, 4, 5}
+        slice := arr[1:4] // slice contém [2, 3, 4]
+        // Criando um slice usando a função make
+        slice := make([]int, 3) // Cria um slice de inteiros com tamanho 3 e valores iniciais 0
 
-    // Criando um slice a partir de um array existente
-    
 ## Funções
 
 Em Go, as funções são blocos de código que executam uma tarefa específica e podem ser chamadas a partir de outros lugares no programa. As funções são fundamentais  para organizar e modularizar o código, tornando-o mais legível, reutilizável e fácil de manter. Vamos explorar os principais aspectos das funções em Go:
