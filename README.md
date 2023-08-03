@@ -25,7 +25,7 @@ Algumas das principais motivações para a criação da linguagem Go incluem:
 
 Os tipos de dados são fundamentais na programação, pois determinam o tipo de informação que uma variável pode armazenar.  Vamos abordar alguns dos principais tipos de dados em Go:
 
--   **Inteiros**:   Em Go, os inteiros podem ser assinados (podem ser positivos ou negativos) ou não assinados (apenas positivos). Os principais tipos de inteiros em Go são: int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64. A diferença entre eles é o número de bits que cada tipo ocupa na memória. Por exemplo, o tipo int geralmente ocupa 32 bits em sistemas de 32 bits e 64 bits em sistemas de 64 bits.
+   **Inteiros**:   Em Go, os inteiros podem ser assinados (podem ser positivos ou negativos) ou não assinados (apenas positivos). Os principais tipos de inteiros em Go são: int, int8, int16, int32, int64, uint, uint8, uint16, uint32, uint64. A diferença entre eles é o número de bits que cada tipo ocupa na memória. Por exemplo, o tipo int geralmente ocupa 32 bits em sistemas de 32 bits e 64 bits em sistemas de 64 bits.
 
     **Ponto Flutuante**:   Números de ponto flutuante são usados para representar números com partes fracionárias. Em Go, temos dois tipos principais de ponto flutuante: float32 e float64. O float32 ocupa 32 bits e o float64 ocupa 64 bits, sendo este último mais preciso e geralmente utilizado por padrão.
 
