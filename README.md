@@ -50,10 +50,14 @@ a inferencia de tipos de duas maneiras
     var nome = valor
     nome := valor
 
-outra coisa importante a se dizer é que existe um tipo especial de declaração para variáveis que não irão sofrer alteração de valor ao longo do código (constantes)
-para isso, o Go possui a palavra reservada **const**. Para declarar uma constante devemos obedecer a seguinte sintaxe:
+outra coisa importante a se dizer é que existe um tipo especial de declaração para variáveis que não irão sofrer alteração de valor ao longo do código (constantes) para isso, o Go possui a palavra reservada **const**. Para declarar uma constante devemos obedecer a seguinte sintaxe:
 
     const nome = valor
+vale ressaltar que ao instanciarmos uma variável sem valor atribuído, o próprio Go trata de atribuir os valores default de cada tipo. Por exemplo
+
+    var num int
+    //Imprime o valor 0, default para int
+    fmt.Println(num)
 
 ## Estruturas de Controle
 
@@ -167,4 +171,61 @@ Exemplo:
 
     dobro := multiplicador(2)
     resultado := dobro(5) // Retorna 10
+Agora que conhecemos um pouco mais sobre funções em Go, vamos analisar o seguinte cenário
 
+    
+    func  main() {
+		var  a [10]int
+		fmt.Println("Pos. 0 do Array antes:",a[0])
+		changeArray(1, a)
+		fmt.Println("Pos. 0 do Array depois:",a[0])
+	}
+    
+    func  changeArray(num int, array [10]int) {
+	    array[0] = num
+	  }
+
+Qual o resultado esperado dessa execução? Se você respondeu 0, está correto, isso acontece por conta de dois conceitos do Go, os quais são muito presentes em linguagens como C e C++, e são eles **passagem  por valor** e **passagem  por refrência**.
+
+Vamos começar entendendo o conceito de **passagem por valor**. Quando dizemos que a função recebe um argumento por valor,  significa que uma cópia do valor é feita e passada para a função, e qualquer alteração feita nos parâmetros dentro da função não afeta as variáveis originais fora dela. É importante ressaltar que ao passar tipos de dados básicos (como inteiros, floats, strings e structs e até mesmo arrays desses tipos) como argumentos para uma função, o Go realiza uma passagem por valor. Um exemplo disso é oque acontece no exemplo da função **changeArray()**
+
+Agora, a **passagem por referência** carrega com ela um conceito muito importante em programação, que é a ideia de **ponteiro**. Um ponteiro é uma variável especial que armazena o endereço de memória de outra variável. Em vez de conter o valor real da variável, o ponteiro contém a localização na memória onde o valor está armazenado. Dessa forma, os ponteiros permitem acessar e modificar diretamente os dados em uma localização de memória específica. 
+	Em Go, a sintaxe para trabalhar com ponteiros é relativamente simples. Para declarar um ponteiro, você usa o operador `*`, e para obter o endereço de memória de uma variável, você usa o operador `&`. Para acessar o valor apontado pelo ponteiro, você usa o operador `*` novamente. Vamos retornar ao exemplo anterior:
+
+	 func  main() {
+		var  a [10]int
+
+		//a[0] = 0
+		fmt.Println("Pos. 0 do Array antes:",a[0])
+		
+		//O endereço de memória de a é passado para a função através do operador &
+		changeArray(1, &a)
+		
+		//a[0] = 1
+		fmt.Println("Pos. 0 do Array depois:",a[0])
+	}
+    
+    func  changeArray(num int, array *[10]int) {
+	    array[0] = num
+	  }
+Além do ponteiro, existem tipos que por padrão, realizam passagem por referência, e são eles a **slice** e o **map** . Observe o seguinte exemplo
+
+	func  main() {
+		var  a [10]int	// inicia a array [0,0,0,0,0,0,0,0,0,0]
+		fmt.Println("Array antes:",a) 
+		
+		s  := a[:2] //inicia slice [0,0,0]
+		fmt.Println("Slice antes:",s) 
+		
+		changeSlice(1, s)
+		
+		//imprime a slice [1,0,0]
+		fmt.Println("Slice depois:",s)
+		//imprime a array [1,0,0,0,0,0,0,0,0,0]
+		fmt.Println("Array depois:",a)
+	}  
+	
+	func  changeSlice(num int, slice []int) {
+		slice[0]=num
+	}
+Note que o valor da array é modificado, pois a slice faz referencia ao endereço de memória da array, sendo assim, ao modificar uma a outra também é modificada.
